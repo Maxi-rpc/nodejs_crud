@@ -12,12 +12,12 @@ Curso de Node js, Crud, alta, baja y modificacion de contacto.
 - Js
 - Node js
 - npm
-- Express
-- Mysql
-- Nodemon
-- Template ejs
-- Sweet Alert 2
-- Data Table js
+  - Express
+  - Mysql
+  - Nodemon
+  - Template ejs
+  - Sweet Alert 2
+  - Data Table js
 - **Vs Code**
 - GitHub
 - [Compress.io](https://compressor.io/) para comprimir imagenes
