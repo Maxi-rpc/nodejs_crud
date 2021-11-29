@@ -10,10 +10,10 @@ const conexion = mysql.createConnection({
 // conexion test
 conexion.connect((error) => {
   if (error) {
-    console.error("EL error de conexion es: " + error);
+    console.error("EL error de conexion a DB es: " + error);
     return;
   }
-  console.log("Conectado a la BD Mysql");
+  console.log("Conectado a la DB Mysql");
 });
 // exportar modulo
 module.exports = conexion;

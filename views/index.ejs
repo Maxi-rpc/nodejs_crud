@@ -80,11 +80,16 @@
             <td><%= user.rol %></td>
             <td>
               <a href="/edit/<%= user.id %>" class="btn btn-outline-info"
-                >Editar</a
-              >
-              <a href="/delete/<%= user.id %>" class="btn btn-outline-danger"
-                >Borrar</a
-              >
+                ><i class="bx bx-edit"></i
+              ></a>
+              <!-- <a href="/delete/<%= user.id %>" class="btn btn-outline-danger"
+                ><i class="bx bx-trash"></i
+              ></a> -->
+              <a
+                onclick="confirmar(<%= user.id %>)"
+                class="btn btn-outline-danger"
+                ><i class="bx bx-trash"></i
+              ></a>
             </td>
           </tr>
           <% }) %>
@@ -97,5 +102,25 @@
       integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
       crossorigin="anonymous"
     ></script>
+    <!-- Sweet Alert2 -->
+    <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script>
+      function confirmar(id) {
+        Swal.fire({
+          icon: "warning",
+          title: "Confirmar Eliminar",
+          text: "Se eliminara el registro: ",
+          showCloseButton: true,
+          showCancelButton: true,
+          confirmButtonText: "Ok",
+          denyButtonText: `Cancelar`,
+        }).then((result) => {
+          /* Read more about isConfirmed, isDenied below */
+          if (result.isConfirmed) {
+            window.location = "/delete/" + id;
+          }
+        });
+      }
+    </script>
   </body>
 </html>

@@ -19,6 +19,7 @@ exports.save = (req, res) => {
 };
 
 exports.update = (req, res) => {
+  // recibir datos
   const id = req.body.id;
   const user = req.body.user;
   const rol = req.body.rol;
