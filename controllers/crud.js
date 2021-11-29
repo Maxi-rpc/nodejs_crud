@@ -1,5 +1,5 @@
 const conexion = require("../database/db");
-
+// guardar registro
 exports.save = (req, res) => {
   // recibir datos
   const user = req.body.user;
@@ -17,7 +17,7 @@ exports.save = (req, res) => {
     }
   );
 };
-
+// actualizar registro
 exports.update = (req, res) => {
   // recibir datos
   const id = req.body.id;
@@ -35,4 +35,17 @@ exports.update = (req, res) => {
       }
     }
   );
+};
+// eliminar registro
+exports.delete = (req, res) => {
+  // recibir datos
+  const id = req.body.id;
+  // query a db delete
+  conexion.query("DELETE FROM users WHERE id=?", [id], (error, results) => {
+    if (error) {
+      throw error;
+    } else {
+      res.redirect("/");
+    }
+  });
 };

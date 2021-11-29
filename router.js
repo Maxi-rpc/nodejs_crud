@@ -35,7 +35,7 @@ router.get("/create", (req, res) => {
 });
 
 // eliminar registro
-router.get("/delete/:id", (req, res) => {
+/* router.get("/delete/:id", (req, res) => {
   const id = req.params.id;
   conexion.query("DELETE FROM users WHERE id=?", [id], (error, results) => {
     if (error) {
@@ -44,10 +44,13 @@ router.get("/delete/:id", (req, res) => {
       res.redirect("/");
     }
   });
-});
+}); */
 
+// controlador
 const crud = require("./controllers/crud");
+// rutas del controlador
 router.post("/save", crud.save);
 router.post("/update", crud.update);
+router.post("/delete/:id", crud.delete);
 
 module.exports = router;
